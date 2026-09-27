@@ -88,7 +88,6 @@ const onPointerMove = (e: MouseEvent | TouchEvent) => {
   const row = (y / props.fontSize) | 0;
 
   if (lastCol !== -1 && lastRow !== -1) {
-    // Inlined Bresenham's (zero array allocations)
     let x0 = lastCol,
       y0 = lastRow;
     const dx = Math.abs(col - x0),
@@ -153,7 +152,6 @@ const draw = (timestamp: number) => {
     h = canvas.height,
     size = props.fontSize;
 
-  // Calculate static properties outside the loop to prevent millions of branch checks
   const isRainbow = props.variant === "rainbow" && !props.fixedColor;
   const staticColor =
     props.fixedColor || (props.variant === "cyan" ? "#0FF" : "#0F0");
@@ -166,7 +164,6 @@ const draw = (timestamp: number) => {
   ctx.globalCompositeOperation = "source-over";
   ctx.font = `${size}px monospace`;
 
-  // Standard Rain
   for (let i = 0; i < drops.length; i++) {
     const text = chars.charAt((Math.random() * charsLen) | 0);
     const drop = drops[i] as number;
@@ -180,7 +177,6 @@ const draw = (timestamp: number) => {
     drops[i] = y > h && Math.random() > 0.975 ? 0 : drop + 1;
   }
 
-  // Hover Ribbon
   for (const [key, cell] of activeCells.entries()) {
     const x = cell.col * size,
       rectY = cell.row * size,

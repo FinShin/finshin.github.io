@@ -1,6 +1,5 @@
 <template>
   <div class="bg-wrapper">
-    <!-- Code Blocks Layer (Now handles the blur directly for GPU performance) -->
     <div class="hacker-layer">
       <div
         v-for="block in blocks"
@@ -18,10 +17,8 @@
       </div>
     </div>
 
-    <!-- Vignette Overlay (Pure CSS gradient, no expensive backdrop filters) -->
     <div class="vignette-overlay"></div>
 
-    <!-- Main Content Slot -->
     <div class="content-container">
       <slot />
     </div>
@@ -44,7 +41,6 @@ const snippets = [
   "while (thread.isAlive()) {\n  await processQueue();\n}",
 ];
 
-// PRE-COMPILED REGEX (Saves CPU allocation on every frame)
 const reEscape = /[&<>]/g;
 const mapEscape = { "&": "&amp;", "<": "&lt;", ">": "&gt;" };
 const reComments = /(\/\/.*|&lt;!--.*?--&gt;)/g;
@@ -54,7 +50,7 @@ const reKeywords =
 const reFuncs =
   /\b(ref|computed|isActive|malloc|systemctl|thread|processQueue|System|boot|id|hash|last_login|access_level)\b/g;
 const reNumbers = /\b(0x[0-9A-F]+|\d+)\b/g;
-const reGlitch = /[a-zA-Z0-9_]/g; // Fast target for glitching text
+const reGlitch = /[a-zA-Z0-9_]/g;
 
 const highlight = (text) => {
   if (!text) return "";
@@ -86,7 +82,6 @@ const blocks = ref(
 let animationFrameId;
 let lastTime = performance.now();
 
-// FPS THROTTLING FOR LOW-END DEVICES
 const TARGET_FPS = 30;
 const frameDelay = 1000 / TARGET_FPS;
 
@@ -94,9 +89,9 @@ const updateLoop = (time) => {
   animationFrameId = requestAnimationFrame(updateLoop);
 
   const dt = time - lastTime;
-  if (dt < frameDelay) return; // Skip frames to maintain 30 FPS
+  if (dt < frameDelay) return;
 
-  lastTime = time - (dt % frameDelay); // Adjust for slight frame variations
+  lastTime = time - (dt % frameDelay);
 
   blocks.value.forEach((block) => {
     block.timer -= dt;
@@ -126,7 +121,7 @@ const updateLoop = (time) => {
           break;
 
         case "typing":
-          block.charIndex += 1; // Advance typing
+          block.charIndex += 1;
           block.text = block.fullText.slice(0, block.charIndex);
           if (block.charIndex >= block.fullText.length) {
             block.state = "code_idle";
@@ -145,14 +140,12 @@ const updateLoop = (time) => {
         case "glitching":
           block.glitchTicks++;
           if (block.glitchTicks > 12) {
-            // Final glitch to solid binary
             block.text = block.fullText.replace(/[^\s\n]/g, () =>
               Math.random() > 0.5 ? "1" : "0",
             );
             block.state = "binary_idle";
             block.timer = 1500 + Math.random() * 2000;
           } else {
-            // Fast regex glitch replacement instead of heavy JS looping
             block.text = block.fullText.replace(reGlitch, (char) =>
               Math.random() > 0.7 ? (Math.random() > 0.5 ? "1" : "0") : char,
             );
@@ -194,7 +187,6 @@ onBeforeUnmount(() => {
   overflow: hidden;
 }
 
-/* Blur applied globally to the layer, saving massive GPU calculations */
 .hacker-layer {
   position: absolute;
   inset: 0;
@@ -215,12 +207,10 @@ onBeforeUnmount(() => {
   opacity: 1;
 }
 
-/* Simplified opacity transition */
 .code-block.is-fading {
   transition: opacity 2s ease-out;
 }
 
-/* Reduced shadow spread sizes for faster rendering */
 .hl-keyword {
   color: #f472b6;
   text-shadow: 0 0 5px rgba(244, 114, 182, 0.4);
@@ -257,7 +247,6 @@ onBeforeUnmount(() => {
   }
 }
 
-/* Pure CSS color overlay, no expensive backdrop filters */
 .vignette-overlay {
   position: absolute;
   inset: 0;

@@ -10,7 +10,6 @@
       </div>
     </Transition>
 
-    <!-- FLEXBOX ROW OF SOCIAL ICONS -->
     <div class="social-row">
       <a
         v-for="item in socialLinks"
@@ -23,10 +22,8 @@
         rel="noopener noreferrer"
         @click="handleClick($event, item)"
       >
-        <!-- Pre-rendered DOM-free Splash Ring -->
         <div class="splash-ring"></div>
 
-        <!-- Pre-rendered DOM-free Paint Droplets -->
         <div
           v-for="(drop, index) in item.droplets"
           :key="index"
@@ -39,7 +36,6 @@
           }"
         ></div>
 
-        <!-- Dynamic Icon Switch: Checkmark when copied, regular SVG otherwise -->
         <svg viewBox="0 0 24 24" class="icon-svg">
           <path :d="copiedStates[item.id] ? checkSvgPath : item.svgPath" />
         </svg>
@@ -51,7 +47,6 @@
 <script setup lang="ts">
 import { reactive } from "vue";
 
-// Pre-calculate droplet vectors to avoid math/DOM generation on click
 interface Droplet {
   tx: number;
   ty: number;
@@ -68,7 +63,6 @@ interface SocialLink {
   droplets: Droplet[];
 }
 
-// Generate the 12 random paint splash droplets per button ahead of time
 const generateDroplets = (num = 12): Droplet[] => {
   return Array.from({ length: num }).map((_, i) => {
     const angle = (i / num) * 360 + (Math.random() * 20 - 10);
@@ -140,7 +134,6 @@ let toastTimer: ReturnType<typeof setTimeout> | null = null;
 const iconTimers: Record<string, ReturnType<typeof setTimeout>> = {};
 const splashTimers: Record<string, ReturnType<typeof setTimeout>> = {};
 
-// Fallback is hidden safely off-screen to avoid mobile layout shifting
 const copyToClipboard = async (text: string): Promise<boolean> => {
   if (navigator.clipboard && window.isSecureContext) {
     try {
@@ -165,7 +158,6 @@ const copyToClipboard = async (text: string): Promise<boolean> => {
   }
 };
 
-// Accept general Event to natively handle Mouse/Touch routing seamlessly
 const handleClick = async (event: Event, item: SocialLink) => {
   // Capture DOM target synchronously before any promises run
   const button = event.currentTarget as HTMLElement | null;
@@ -186,11 +178,9 @@ const handleClick = async (event: Event, item: SocialLink) => {
     }
   }
 
-  // Trigger GPU-accelerated Splash Animation via CSS class toggle
   if (button) {
     button.classList.remove("is-splashing");
 
-    // Hardware accelerated re-trigger using requestAnimationFrame instead of forced offsetWidth reflow
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         button.classList.add("is-splashing");
@@ -223,7 +213,6 @@ const showToast = (msg: string) => {
   padding: 0;
 }
 
-/* TOP TOAST BUBBLE NOTIFICATION */
 .copy-toast {
   position: fixed;
   top: 10vh;
@@ -267,7 +256,6 @@ const showToast = (msg: string) => {
   fill: #34d399;
 }
 
-/* Toast Transition Animations */
 .toast-pop-enter-active {
   transition:
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
@@ -287,7 +275,6 @@ const showToast = (msg: string) => {
   transform: translate(-50%, -20px) scale(0.9);
 }
 
-/* Flexbox Row Container */
 .social-row {
   display: flex;
   flex-direction: row;
@@ -297,7 +284,6 @@ const showToast = (msg: string) => {
   padding: 1rem;
 }
 
-/* Icon Button Base */
 .icon-btn {
   position: relative;
   width: 10vw;
@@ -324,7 +310,6 @@ const showToast = (msg: string) => {
   color: #ffffff;
   --brand-color: #ffffff;
 
-  /* Prevent interaction tap highlights on mobile */
   -webkit-tap-highlight-color: transparent;
   transform: translateZ(0);
 }
@@ -337,7 +322,6 @@ const showToast = (msg: string) => {
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Brand Theme Mapping */
 .icon-btn[data-brand="linkedin"] {
   --brand-color: #0a66c2;
 }
@@ -354,7 +338,6 @@ const showToast = (msg: string) => {
   --brand-color: #24a1de;
 }
 
-/* Hover States */
 @media (hover: hover) {
   .icon-btn:hover {
     color: var(--brand-color);
@@ -373,7 +356,6 @@ const showToast = (msg: string) => {
   transform: scale(0.92);
 }
 
-/* Paint Stomp Effects (Using direct classes instead of :deep) */
 .splash-ring {
   position: absolute;
   inset: -5px;

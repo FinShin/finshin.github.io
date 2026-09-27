@@ -42,7 +42,7 @@ import {
   HandHelping,
   CalendarClock,
   MoveUpRight,
-} from "@lucide/vue"; // Removed unused LucideBatteryWarning
+} from "@lucide/vue";
 
 const isPopupOpen = ref(false);
 const popupImageSrc = ref("");
@@ -115,7 +115,6 @@ const projects = ref([
   },
 ]);
 
-// Unified Works Sections to prevent redundant template nodes
 const workSections = computed(() => [
   {
     title: '<span class="highlight">Comissions</span>',
@@ -134,7 +133,6 @@ const isHovered = ref(false);
 
 let rafId: number | null = null;
 
-// Debounced and Hardware-Accelerated interaction handler
 const handleInteraction = (e: MouseEvent | TouchEvent) => {
   isHovered.value = true;
   if (!gridRef.value) return;
@@ -193,7 +191,6 @@ const handleInteraction = (e: MouseEvent | TouchEvent) => {
 
     <!-- HEADER SECTION -->
     <div class="header-cont" id="home">
-      <!-- Passive event listeners added to prevent scroll blocking on mobile -->
       <div
         class="name-grid"
         ref="gridRef"
@@ -346,7 +343,6 @@ const handleInteraction = (e: MouseEvent | TouchEvent) => {
           height="136"
           width="94"
         >
-          <!-- Keep existing path elements unchanged here -->
           <path
             stroke="#4B22B5"
             d="M87.3629 108.433L49.1073 85.3765C47.846 84.6163 45.8009 84.6163 44.5395 85.3765L6.28392 108.433C5.02255 109.194 5.02255 110.426 6.28392 111.187L44.5395 134.243C45.8009 135.004 47.846 135.004 49.1073 134.243L87.3629 111.187C88.6243 110.426 88.6243 109.194 87.3629 108.433Z"
@@ -777,7 +773,7 @@ const handleInteraction = (e: MouseEvent | TouchEvent) => {
       </div>
     </div>
 
-    <!-- PROJECTS AND COMMISIONS (Unified Block) -->
+    <!-- PROJECTS AND COMMISIONS -->
     <label class="projects-section-title select-none" id="works">
       Projects and <span class="highlight">Comissions</span>
     </label>

@@ -286,7 +286,6 @@ const updateScale = (width: number, height: number) => {
   scale = Math.max(0.01, Math.min(targetScale, widthScale, heightScale));
 };
 
-// RAM Optimization: Object Pool for Drag State (Zero Garbage Collection)
 const isDragging = ref(false);
 const dragState = {
   active: false,
@@ -483,7 +482,6 @@ const onPointerDown = (e: PointerEvent) => {
   killTween();
   cancelScheduledLayout();
 
-  // Reset pooled object state without allocating new memory
   dragState.active = true;
   dragState.x = e.clientX;
   dragState.startPos = pos;
@@ -493,7 +491,6 @@ const onPointerDown = (e: PointerEvent) => {
   dragState.moved = false;
   dragState.id = e.pointerId;
 
-  // Decreased sensitivity: Multiplier raised from 0.55 to 0.85
   dragState.stepPx = Math.max(displayCardWidth.value * 0.85 * scale, 60);
 };
 
@@ -502,10 +499,9 @@ const onPointerMove = (e: PointerEvent) => {
 
   const dx = e.clientX - dragState.x;
 
-  // Fixed the dead-click issue: Increased threshold from 4px to 12px
   if (!dragState.moved && Math.abs(dx) > 12) {
     dragState.moved = true;
-    isDragging.value = true; // Updates CSS Cursor
+    isDragging.value = true;
     rootRef.value?.setPointerCapture(dragState.id);
   }
 
@@ -663,12 +659,9 @@ watch(
   user-select: none;
   -webkit-user-select: none;
   isolation: isolate;
-
-  /* Reset cursor to default, grab only kicks in when hovering cards */
   cursor: default;
 }
 
-/* Explicitly bind grabbing cursor only when the dragging state is active */
 .depth-carousel.is-dragging {
   cursor: grabbing;
 }
