@@ -44,7 +44,7 @@ import {
   MoveUpRight,
 } from "@lucide/vue";
 
-const isPopupOpen = ref(false);
+const isPopupOpen = ref(false); 
 const popupImageSrc = ref("");
 
 const openPopup = (imgSrc: string) => {
