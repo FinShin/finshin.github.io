@@ -2,7 +2,7 @@ name: Deploy Vue App to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # Runs when you push code to main branch
+    branches: [ page ] # Runs when you push code to main branch
 
 permissions:
   contents: read
