@@ -6,7 +6,7 @@
   <p>Building thoughtful solutions through code, hardware, and continuous learning.</p>
 
   <p>
-    <a href="[https://github.com/finshin](https://github.com/FinShin)"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" /></a>
+    <a href="https://github.com/FinShin"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" /></a>
     <a href="https://www.linkedin.com/in/jirho-enciso"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn profile" /></a>
     <a href="https://www.facebook.com/jirho.enciso.2025"><img src="https://img.shields.io/badge/Facebook-0866FF?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook profile" /></a>
     <a href="https://t.me/@creepsandesu"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram profile" /></a>
