@@ -1,42 +1,61 @@
-# Jirho Enciso Portfolio
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:111827,100:2563EB&height=165&section=header&text=JIRHO%20ENCISO&fontSize=44&fontColor=FFFFFF&fontAlignY=50" alt="Jirho Enciso — Computer Engineering portfolio banner" width="100%" />
+  <a href="https://finshin.github.io"><img src="https://img.shields.io/badge/Portfolio-finshin.github.io-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio website" /></a>
+  <h3>💻 COMPUTER ENGINEERING · SOFTWARE · EMBEDDED SYSTEMS</h3>
+  <p><strong>Curious by nature. Practical by design.</strong></p>
+  <p>Building thoughtful solutions through code, hardware, and continuous learning.</p>
 
-This template should help get you started developing with Vue 3 in Vite.
+  <p>
+    <a href="https://github.com/FinShin"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub profile" /></a>
+    <a href="https://www.linkedin.com/in/jirho-enciso"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn profile" /></a>
+    <a href="https://www.facebook.com/jirho.enciso.2025"><img src="https://img.shields.io/badge/Facebook-0866FF?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook profile" /></a>
+    <a href="https://t.me/@creepsandesu"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram profile" /></a>
+    <a href="mailto:jirhoenciso1204@gmail.com?subject=Hello&body=Hi%20there"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Send me an email" /></a>
+  </p>
+</div>
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 👋 About Me
 
-## Recommended Browser Setup
+I'm a Computer Engineering student at **Cagayan State University – Carig Campus** in Tuguegarao, Philippines. I enjoy learning by building, experimenting with hardware, and developing software that solves practical problems.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- 🛠️ **Interests:** Hardware troubleshooting and repair, software development, IoT, and embedded systems
+- 🧩 **Approach:** Optimization, simplicity, and thoughtful problem-solving
+- 🌏 **Location:** Cagayan, Philippines · Open to remote opportunities
 
-## Type Support for `.vue` Imports in TS
+## 🧰 Technical Skills
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+**Programming**
 
-## Customize configuration
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+**Frontend**
 
-## Project Setup
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
 
-```sh
-npm install
-```
+**Database**
 
-### Compile and Hot-Reload for Development
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 
-```sh
-npm run dev
-```
+## 🏅 Certifications & Achievements
 
-### Type-Check, Compile and Minify for Production
+- **Computer Systems Servicing NC II** — Passer
+- **Career Service Professional**
+- **Safety Officer 1 (SO1)**
+- 🥇 **1st Runner-Up** — General Programming Competition, Regional ITE Summit 2026
+- 🏅 **4th Place** — Group Stage 1, CodeChum National Programming Challenges
 
-```sh
-npm run build
-```
+---
+
+<div align="center">
+  <h3>🤝 Let's Connect</h3>
+  <p>Open to meaningful opportunities, collaboration, and new challenges.</p>
+  <a href="mailto:jirhoenciso1204@gmail.com?subject=Hello&body=Hi%20there">Email me</a> · <a href="https://www.linkedin.com/in/jirho-enciso">Connect on LinkedIn</a>
+  <br /><br />
+  <sub>Designed with curiosity, built with purpose. ✨</sub>
+</div>
